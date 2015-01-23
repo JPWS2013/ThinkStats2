@@ -120,6 +120,11 @@ if __name__ == '__main__':
         if pregnum!=len(index_list):
             errorlist.append(caseid)
 
-    print(errorlist)
-    print(len(errorlist))
+    if len(errorlist)==0:
+        print ('No discrepencies found between FemPreg and FemResp Datasets!')
+        
+    else:
+        print('Discrepencies were found between FemPreg and FemResp Datasets.')
+        print('The following CaseIDs have shown discrepencies:')
+        print(errorlist)
             
