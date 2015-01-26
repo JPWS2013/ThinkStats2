@@ -60,6 +60,9 @@ def MakeFigures(firsts, others):
     thinkplot.PrePlot(2)
     thinkplot.SubPlot(2)
     thinkplot.Pmfs([first_pmf, other_pmf])
+    thinkplot.Show(xlabel='weeks',
+                   ylabel='probability',
+                   axis=[27, 46, 0, 0.6])
     thinkplot.Save(root='probability_nsfg_pmf',
                    xlabel='weeks',
                    axis=[27, 46, 0, 0.6])
@@ -74,6 +77,7 @@ def MakeFigures(firsts, others):
         diffs.append(diff)
 
     thinkplot.Bar(weeks, diffs)
+    thinkplot.Show(xlabel='weeks', ylabel='Difference in percentage points')
     thinkplot.Save(root='probability_nsfg_diffs',
                    title='Difference in PMFs',
                    xlabel='weeks',
@@ -160,7 +164,6 @@ def main(script):
     live, firsts, others = first.MakeFrames()
     MakeFigures(firsts, others)
     MakeHists(live)
-
     ClassSizes()
 
 
