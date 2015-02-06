@@ -49,7 +49,7 @@ def InterpolateSample(df, log_upper=6.0):
 
 def main():
     df = hinc.ReadData()
-    log_sample = InterpolateSample(df, log_upper=6.0)
+    log_sample = InterpolateSample(df, log_upper=4.0)
 
     log_cdf = thinkstats2.Cdf(log_sample)
     thinkplot.Cdf(log_cdf)
